@@ -12,7 +12,6 @@
 	<artifactId>Backend-Developer_Assignment_ABC-Technologies</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Backend-Developer_Assignment_ABC-Technologies</name>
-	<description>ExpenseTrackerCRUDapp</description>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>

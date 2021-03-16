@@ -9,7 +9,7 @@ import com.assignment.model.Medicine;
 
 @Repository
 public interface MedicineRepository extends JpaRepository<Medicine, String> {
-	
+	//custom methods to create some api's
 	List<Medicine> findByNameStartsWith(String rating);
 	List<Medicine> findAllByuniqueCode(String uniqueId);
 
