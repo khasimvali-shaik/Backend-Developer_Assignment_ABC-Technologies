@@ -11,5 +11,6 @@ import com.assignment.model.Medicine;
 public interface MedicineRepository extends JpaRepository<Medicine, String> {
 	
 	List<Medicine> findByNameStartsWith(String rating);
+	List<Medicine> findAllByuniqueCode(String uniqueId);
 
 }

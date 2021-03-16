@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -67,6 +68,7 @@ public class MedicineService {
 			e.printStackTrace();
 		}
 	}
+	
 	public List<String> searchMedicine(String value) {
 		List<Medicine> medicines = repo.findByNameStartsWith(value);
 		List<String> names = new ArrayList<>();
@@ -76,5 +78,9 @@ public class MedicineService {
 		
 		
 		return names;
+	}
+	
+	public List<Medicine> getMedicines(String id){
+		return repo.findAllByuniqueCode(id);
 	}
 }
