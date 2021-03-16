@@ -7,7 +7,12 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+import java.util.Locale;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,13 +39,16 @@ public class MedicineService {
 				iteration++;
 				String[] data = line.split(",");
 				String sDate=data[2];  
+				String[] date = sDate.split("/");
+				int day = Integer.parseInt(date[0]);
+				int month = Integer.parseInt(date[1]);
+				int year = Integer.parseInt(date[2]);
 				
-			
-				LocalDate date = LocalDate.parse("2018-09-16");
+				LocalDate date1 = LocalDate.of(year, month, day);
 				Medicine medicine = new Medicine();
 				medicine.setName(data[0]);
 				medicine.setBatchNo(data[1]);
-				medicine.setExpiryDate(date);
+				medicine.setExpiryDate(date1);
 				medicine.setBalanceQty(Integer.parseInt(data[3]));
 				medicine.setPackaging(data[4]);
 				medicine.setUniqueCode(data[5]);
@@ -58,5 +66,15 @@ public class MedicineService {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+	public List<String> searchMedicine(String value) {
+		List<Medicine> medicines = repo.findByNameStartsWith(value);
+		List<String> names = new ArrayList<>();
+		for(Medicine m: medicines) {
+			names.add(m.getName());
+		}
+		
+		
+		return names;
 	}
 }

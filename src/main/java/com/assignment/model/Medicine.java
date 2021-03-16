@@ -1,12 +1,19 @@
 package com.assignment.model;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 
+import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.TemporalType;
+
+import org.springframework.data.jpa.repository.Temporal;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
 @Table(name = "medicines_details")
@@ -19,7 +26,9 @@ public class Medicine {
 	@Column(name = "c_batch_number")
 	private String batchNo;
 	
+	
 	@Column(name = "c_expiry_date")
+	@JsonFormat(pattern = "yyyy-MM-dd")
 	private LocalDate expiryDate;
 	
 	@Column(name = "n_balance_qty")
@@ -59,8 +68,8 @@ public class Medicine {
 	public LocalDate getExpiryDate() {
 		return expiryDate;
 	}
-	public void setExpiryDate(LocalDate date) {
-		this.expiryDate = date;
+	public void setExpiryDate(LocalDate date1) {
+		this.expiryDate = date1;
 	}
 	public int getBalanceQty() {
 		return balanceQty;
