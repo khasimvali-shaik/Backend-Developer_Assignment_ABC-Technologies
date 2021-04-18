@@ -21,9 +21,11 @@ import com.assignment.repositories.MedicineRepository;
 @Service
 public class MedicineService {
 	
-	//This is reference to the repository 
+	//This is reference to the repository
 	@Autowired
 	private MedicineRepository repo;
+	
+
 
 	String line = "";
 
@@ -111,5 +113,9 @@ public class MedicineService {
 		UUID uuid = UUID.randomUUID();
 
 		return "Your order id is: " + uuid.toString();
+	}
+	
+	public List<Medicine> getAllMedicine() {
+		return  repo.findAll();
 	}
 }

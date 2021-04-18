@@ -1,0 +1,46 @@
+.tab {
+    text-align: center;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: #1b5e42;
+    color: #f3f7f5;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #e495e4;
+}
+
+.table {
+    position: relative;
+    top: 70px;
+    text-align: center;
+}
+
+.search {
+    margin: 20px;
+    width: 300px;
+    padding: 10px;
+    border: none;
+    display: flex;
+    margin: 0 auto;
+}
+
+.box {
+    width: 300px;
+    padding: 8px;
+    text-align: center;
+    font-size: 16px;
+    border: none;
+}
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.example-full-width {
+    width: 100%;
+}

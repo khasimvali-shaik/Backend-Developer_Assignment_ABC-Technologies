@@ -1,0 +1,44 @@
+img {
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    margin-top: 60px;
+    margin-bottom: 0px;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.quote {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 100;
+    font-size: 50px;
+    line-height: 1.5;
+}
+
+.footer {
+    background-color: #ccccff;
+    height: 5rem;
+    margin-top: 0px;
+}
+
+footer {
+    font-size: 20px;
+    padding: 30px 500px;
+}
+
+span {
+    text-transform: capitalize;
+}

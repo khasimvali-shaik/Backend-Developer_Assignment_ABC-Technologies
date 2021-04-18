@@ -1,0 +1,40 @@
+<div class="table">
+    <div class="search">
+        <mat-form-field class="example-full-width">
+            <mat-label><span><mat-icon>search</mat-icon></span>Search Medicine</mat-label>
+            <input matInput placeholder="Medicine Name" name="name" [(ngModel)]="name">
+        </mat-form-field>
+    </div>
+    <table border="1" class="tab" align="center">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>BatchNo</th>
+                <th>Epx Date</th>
+                <th>BalenceQTY</th>
+                <th>Packaging</th>
+                <th>UniqueId</th>
+                <th>Schemes</th>
+                <th>MRP</th>
+                <th>Manufacturer</th>
+                <th>HSN Code</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let medicine of medicines | async | filter:name | paginate: { itemsPerPage: 10, currentPage: p }">
+                <td>{{medicine.name}}</td>
+                <td>{{medicine.batchNo}}</td>
+                <td>{{medicine.expiryDate}}</td>
+                <td>{{medicine.balanceQty}}</td>
+                <td>{{medicine.packaging}}</td>
+                <td>{{medicine.uniqueCode}}</td>
+                <td>{{medicine.schemes}}</td>
+                <td>{{medicine.mrp}}</td>
+                <td>{{medicine.manufacturer}}</td>
+                <td>{{medicine.hsnCode}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+</div>

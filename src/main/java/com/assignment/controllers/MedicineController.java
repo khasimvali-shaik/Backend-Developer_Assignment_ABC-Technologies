@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,6 +17,7 @@ import com.assignment.services.MedicineService;
 /* This is a rest controller used to handle all the requests came to the server by using handler methods
  * 
  */
+@CrossOrigin("*")
 @RestController
 public class MedicineController {
 	//MedicineService bean will be automatically injected by the spring container as it scans the class path and instantiate this class.
@@ -50,6 +52,11 @@ public class MedicineController {
 		
 		
 		return service.orderMedicine(payload.get("quantity").toString(),payload.get("c_unique_id").toString());
+	}
+	
+	@RequestMapping("/display")
+	public List<Medicine> getAllMedicine() {
+		return service.getAllMedicine();
 	}
 	
 }
