@@ -20,6 +20,7 @@ import { HomeComponent } from './components/home/home.component';
 import { FormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { PlaceorderComponent } from './components/placeorder/placeorder.component';
+import { ResultComponent } from './components/result/result.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { PlaceorderComponent } from './components/placeorder/placeorder.componen
     DisplayMedicineComponent,
     HomeComponent,
     PlaceorderComponent,
+    ResultComponent,
     
   ],
   imports: [

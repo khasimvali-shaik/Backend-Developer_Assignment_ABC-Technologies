@@ -1,0 +1,13 @@
+.result {
+    position: relative;
+    top: 100px;
+    text-align: center;
+}
+
+.success {
+    color: green;
+}
+
+.fail {
+    color: red;
+}
